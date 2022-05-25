@@ -7,6 +7,20 @@ import (
 
 type Position int
 
+func (p Position) String() string {
+	switch p {
+	case LEFT:
+		return "left"
+	case RIGHT:
+		return "right"
+	case BOTH:
+		return "both"
+
+	default:
+		return "unknown"
+	}
+}
+
 const (
 	_ Position = iota
 	LEFT

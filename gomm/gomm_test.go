@@ -35,16 +35,16 @@ func TestGomm(t *testing.T) {
 	require.NoError(t, err)
 
 	expected := map[Position][]string{
-		LEFT: []string{
+		LEFT: {
 			"1",
 			"2",
 			"5",
 		},
-		RIGHT: []string{
+		RIGHT: {
 			"4",
 			"7",
 		},
-		BOTH: []string{
+		BOTH: {
 			"3",
 			"6",
 		},
