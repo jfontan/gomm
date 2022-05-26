@@ -1,6 +1,6 @@
 # gomm
 
-This project implements a library that compares two sorted files and tells which lines exist in only one of the files or exit in both. The functionality is the same as the [comm utility](https://en.wikipedia.org/wiki/Comm).
+This project implements a library that compares two sorted files and tells which lines exist in only one of the files or exits in both. The functionality is the same as the [comm utility](https://en.wikipedia.org/wiki/Comm).
 
 For example, to print only strings that appear in both lists:
 
