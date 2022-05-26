@@ -63,6 +63,7 @@ func (g *Gomm) Compare() error {
 		return err
 	}
 
+	loop:
 	for {
 		switch {
 		case l == r:
@@ -70,13 +71,13 @@ func (g *Gomm) Compare() error {
 
 			l, err = g.left.Next()
 			if err != nil {
-				break
+				break loop
 			}
 
 			r, err = g.right.Next()
 			if err != nil {
 				g.callback(LEFT, l)
-				break
+				break loop
 			}
 
 		case l < r:
@@ -84,7 +85,7 @@ func (g *Gomm) Compare() error {
 
 			l, err = g.left.Next()
 			if err != nil {
-				break
+				break loop
 			}
 
 		case l > r:
@@ -92,12 +93,8 @@ func (g *Gomm) Compare() error {
 
 			r, err = g.right.Next()
 			if err != nil {
-				break
+				break loop
 			}
-		}
-
-		if err != nil {
-			break
 		}
 	}
 
