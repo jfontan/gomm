@@ -62,7 +62,7 @@ func TestFileScanner(t *testing.T) {
 		"9\n",
 	}
 
-	f, err := os.CreateTemp("", "goom-")
+	f, err := os.CreateTemp("", "gomm-")
 	require.NoError(t, err)
 	defer f.Close()
 

@@ -56,6 +56,10 @@ func NewFileScanner(file string) (*FileScanner, error) {
 }
 
 func (s *FileScanner) Next() (string, error) {
+	if s.eof {
+		return "", io.EOF
+	}
+
 	line, err := s.b.ReadString('\n')
 	if err != nil {
 		if errors.Is(err, io.EOF) {
